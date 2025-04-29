@@ -1,0 +1,192 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #364691, #3a1a5a);
+  padding: 20px;
+  overflow-x: hidden;
+}
+.right-panel h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* sombra leve */
+  font-weight: 700; /* deixa o h2 mais grosso */
+  letter-spacing: 1px; /* dá mais espaço entre letras */
+}
+
+.container {
+  background: #fff;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeSlideIn 1s forwards;
+}
+
+/* Animação container */
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Left Panel com imagem de fundo */
+.left-panel {
+  flex: 1;
+  background: url('image.png') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.left-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Escurece mais elegante */
+  z-index: 1;
+}
+
+.left-panel .content {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  animation: slideLeft 1.2s ease forwards;
+}
+
+/* Animação do texto da esquerda */
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.left-panel h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.left-panel p {
+  font-size: 18px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* Right Panel (formulário) */
+.right-panel {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  animation: slideRight 1.2s ease forwards;
+}
+
+/* Animação do lado direito */
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.right-panel h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+.input-group input,
+.input-group textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #667eea;
+  outline: none;
+}
+
+.submit-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background: #5a67d8;
+  transform: scale(1.03);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-panel, .right-panel {
+    width: 100%;
+    height: 300px;
+  }
+
+  .right-panel {
+    padding: 20px;
+  }
+}

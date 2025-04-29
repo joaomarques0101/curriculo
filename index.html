@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envio de Currículo</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <div class="content">
+        <h1>Olá!</h1>
+        <p>Envie seu currículo e junte-se à nossa equipe.</p>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <h2>Envio de Currículo</h2>
+      <form id="curriculo-form" enctype="multipart/form-data">
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+        </div>
+        <div class="input-group">
+          <label for="observacao">Observação</label>
+          <textarea id="observacao" name="observacao" rows="4" placeholder="Escreva algo..."></textarea>
+        </div>
+        <div class="input-group">
+          <label for="curriculo">Anexar Currículo (PDF)</label>
+          <input type="file" id="curriculo" name="curriculo" accept=".pdf" required>
+        </div>
+        <button type="submit" class="submit-btn">Enviar Currículo</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
